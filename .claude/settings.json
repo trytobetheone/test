@@ -1,0 +1,16 @@
+{
+  "customCommands": [
+    {
+      "name": "add folder",
+      "description": "빈 폴더를 생성합니다",
+      "command": "powershell -NoProfile -Command \"param([string]$folderName); if([string]::IsNullOrEmpty($folderName)) { Write-Host 'Error: 폴더 이름을 입력해주세요'; exit 1 } else { New-Item -ItemType Directory -Path $folderName -Force | Out-Null; Write-Host \\\"✓ 폴더 '$folderName' 생성됨\\\" }\"",
+      "args": [
+        {
+          "name": "folderName",
+          "description": "생성할 폴더의 이름",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
